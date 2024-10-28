@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   :root {
     --radius: 0.5rem;
@@ -28,12 +24,8 @@ body {
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -54,19 +46,165 @@ body {
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+  }
+
+  * {
+    @apply border-neutral-200;
+  }
+
+  body {
+    @apply bg-white dark:bg-neutral-950 text-neutral-950 dark:text-white font-sans;
+  }
+
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-neutral-950 dark:text-white font-bold;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@layer components {
+  .nav-link {
+    @apply text-neutral-950 dark:text-white hover:opacity-80 transition-colors;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  .section-title {
+    @apply text-4xl font-bold mb-6;
   }
+
+  .hero-title {
+    @apply text-6xl font-bold mb-6;
+  }
+
+  .hero-subtitle {
+    @apply text-2xl;
+  }
+
+  .tagline {
+    @apply text-6xl font-bold text-center;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-8 md:py-12 lg:py-20;
+  }
+
+  .section-margin {
+    @apply my-8 md:my-12 lg:my-20;
+  }
+
+  .responsive-grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-8;
+  }
+
+  .responsive-grid-thirds {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8;
+  }
+
+  .text-responsive {
+    @apply text-base sm:text-lg lg:text-xl;
+  }
+
+  .heading-responsive {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold;
+  }
+
+  .nav-container {
+    @apply fixed top-0 w-full z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm;
+  }
+
+  .nav-content {
+    @apply flex items-center justify-between py-4 md:py-6;
+  }
+
+  .nav-links {
+    @apply hidden md:flex items-center gap-6 lg:gap-8;
+  }
+
+  .stats-grid {
+    @apply grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4;
+  }
+
+  .stat-container {
+    @apply flex flex-col space-y-2;
+  }
+
+  .card-grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8;
+  }
+
+  .card-base {
+    @apply rounded-lg border bg-white dark:bg-neutral-950 p-4 sm:p-6 hover:shadow-lg transition-shadow duration-200 ease-in-out;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 ease-in-out hover:scale-105;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .touch-feedback {
+    @apply active:scale-95;
+  }
+
+  .responsive-image {
+    @apply w-full h-auto object-cover rounded-lg;
+  }
+
+  .image-overlay {
+    @apply absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-200 flex items-center justify-center;
+  }
+
+  .form-group {
+    @apply flex flex-col space-y-2;
+  }
+
+  .input-base {
+    @apply rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-neutral-950 dark:focus:ring-white;
+  }
+
+  .loading-skeleton {
+    @apply animate-pulse bg-neutral-200 dark:bg-neutral-800 rounded;
+  }
+
+  .focus-outline {
+    @apply focus:outline-none focus:ring-2 focus:ring-neutral-950 dark:focus:ring-white focus:ring-offset-2;
+  }
+
+  .mobile-only {
+    @apply block md:hidden;
+  }
+
+  .desktop-only {
+    @apply hidden md:block;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-in-out forwards;
 }
