@@ -3,10 +3,11 @@ import Hero from './components/home/Hero'
 import MissionVision from './components/home/MissionVision'
 import Tagline from './components/home/Tagline'
 import About from './components/home/About'
+import Products from './components/home/Products'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white relative overflow-x-hidden"> {/* Added overflow-x-hidden */}
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Hero />
@@ -14,6 +15,8 @@ export default function Home() {
         <Tagline />
         <About />
       </div>
+      <Products/>
     </main>
   )
 }
+
