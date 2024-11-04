@@ -3,6 +3,7 @@ import Hero from './components/home/Hero'
 import MissionVision from './components/home/MissionVision'
 import Tagline from './components/home/Tagline'
 import About from './components/home/About'
+import Stats from './components/home/Stats'
 import Products from './components/home/Products'
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <MissionVision />
         <Tagline />
         <About />
+        <Stats/>
       </div>
       <Products/>
     </main>

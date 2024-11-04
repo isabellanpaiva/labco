@@ -29,16 +29,17 @@ export default function MissionVision() {
             </motion.p>
           </div>
 
-          <div className="relative mt-8 bg-black dark:bg-gray-800 rounded-lg overflow-hidden h-[300px]">
-            <Image 
-              src="/images/home/HomeImage1.png"
-              alt="Mission visualization"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              style={{ objectFit: 'cover' }}
-              onError={(e) => console.error('Error loading image:', e)}
-            />
-          </div>
+          <div className="relative mt-8 bg-black dark:bg-gray-800 rounded-lg overflow-hidden h-[300px] w-4/5">
+  <Image 
+    src="/images/home/HomeImage1.png"
+    alt="Mission visualization"
+    fill
+    sizes="(max-width: 768px) 80vw, 40vw"
+    style={{ objectFit: 'cover' }}
+    onError={(e) => console.error('Error loading image:', e)}
+  />
+</div>
+
         </motion.div>
         
         {/* Right side - Vision & Image */}
@@ -47,22 +48,22 @@ export default function MissionVision() {
           transition={{ delay: 0.2 }}
           className="relative h-full" 
         >
-          <div className="relative h-[400px] mb-8 rounded-lg overflow-hidden">
-            <Image 
-              src="/images/home/HomeImage2.png"
-              alt="Vision representation"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              style={{ objectFit: 'cover' }}
-              onError={(e) => console.error('Error loading image:', e)}
-            />
-          </div>
+ <div className="relative mt-8 bg-black dark:bg-gray-800 rounded-lg overflow-hidden h-[300px] w-4/5">
+  <Image 
+    src="/images/home/HomeImage2.png"
+    alt="Vision representation"
+    fill
+    sizes="(max-width: 768px) 80vw, 40vw"
+    style={{ objectFit: 'cover' }}
+    onError={(e) => console.error('Error loading image:', e)}
+  />
+</div>
 
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="absolute bottom-40 right-0 rounded-lg p-8 max-w-sm"
+            className="absolute bottom-180 right-0 rounded-lg p-8 max-w-sm"
           >
              <motion.h2 className="typography-h2 border-none">Visão</motion.h2>
              <motion.p className="typography-lead">
